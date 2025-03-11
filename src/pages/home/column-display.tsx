@@ -1,5 +1,6 @@
 import { Grid, Card } from "semantic-ui-react";
 import { DisplayType } from ".";
+import { Link } from "react-router-dom";
 
 interface DisplayData {
     id: number;
@@ -30,6 +31,7 @@ export const ColumnDisplay = (props: Props) => {
             {data.map((displayData: DisplayData) => (
                 <Grid.Column key={displayData.id}>
                     <Card.Group>
+                        <Link to={`/${displayType === DisplayType.Movies ? "movie" : "tvshow"}/${displayData.id}`}>
                         <Card 
                             fluid 
                             image={`https://image.tmdb.org/t/p/original/${displayData.poster_path}`} // Fixed template string
@@ -41,6 +43,7 @@ export const ColumnDisplay = (props: Props) => {
                             meta={`Release Date: ${displayData.release_date} | Rating: ${displayData.vote_average}`} // Fixed template string
                             description={`${displayData.overview.slice(0, 350)}...`} // Ensured proper string slicing
                         />
+                        </Link>
                     </Card.Group>
                 </Grid.Column>
             ))}
