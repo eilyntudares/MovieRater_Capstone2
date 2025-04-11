@@ -130,8 +130,11 @@ import {
                   </List.Item>
                   <List.Item>
                     <List.Header>Seasons:</List.Header>
-                    <List.Description>
-                      <Accordion defaultActiveIndex={0} panels={seasonPanels} styled />
+                    <List.Description style={{height: "200px", overflowY: "scroll"}}>
+                      <Accordion 
+                      defaultActiveIndex={0} 
+                      panels={seasonPanels} 
+                      styled />
                     </List.Description>
                   </List.Item>
                   <List.Item>
