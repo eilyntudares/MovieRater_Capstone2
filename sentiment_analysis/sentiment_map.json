@@ -1,0 +1,7 @@
+{
+    "0": {"name": "very_negative", "weight": -1}, 
+    "1": {"name": "negative", "weight": -0.5}, 
+    "2": {"name": "neutral", "weight": 0}, 
+    "3": {"name": "positive", "weight": 0.5},
+    "4": {"name": "very_positive", "weight": 1}
+}
