@@ -5,14 +5,14 @@ The project is creating a website that lets users rate movies using React.
 
 This branch enhances the movie review application by introducing a new review process. Instead of simply assigning a score to a movie, users can now write a full review. The application then runs the review through a sentiment analysis engine, which automatically computes a score based on the tone and content of the review. This feature is especially useful for users who are unsure about assigning a score directly—they can just share their thoughts and let the system assign a rating.
 
-Checkpoint files for the sentiment analysis model can be found [here](https://huggingface.co/spaces/spava001/Sentiment-Analysis/tree/main). Once downloaded, place the contents of the checkpoint folder inside your local project at sentiment_analysis/checkpoint/ (you need to create the checkpoint folder).
+Checkpoint files for the sentiment analysis model can be found [here](https://huggingface.co/spava001/Sentiment-Analyzer/tree/main). Once downloaded, place the contents of the checkpoint folder inside your local project at sentiment_analysis/checkpoint/ (you need to create the checkpoint folder).
 
-The final structure should look like this:
+For reference, the final structure should look like this:
 <br>
-Movie-Rater/<br>
+MovieRater_Capstone2/<br>
 └── sentiment_analysis/<br>
-    └── checkpoint/<br>
-        └── checkpoint files go here<br>
+&nbsp;&nbsp;&nbsp;&nbsp;└── checkpoint/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── *checkpoint files go here*<br>
 
 ## Setup Instructions
 
@@ -26,7 +26,7 @@ It is recommended to create a virtual environment to isolate this project's depe
 python -m venv venv
 ```
 
-Activate the virtual environment:
+**Activate the virtual environment:**
 
 Windows:
 
