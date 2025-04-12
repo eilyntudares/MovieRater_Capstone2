@@ -5,11 +5,11 @@ from sentiment_analysis.sentiment_analyzer import predict_rating
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/review-to-score", methods=["POST"])
+@app.route("/review-to-rating", methods=["POST"])
 def review_to_score():
     data: dict = request.get_json()
     review = data.get("review", "")
-    predicted_rating = {"score": predict_rating(review)}
+    predicted_rating = {"rating": predict_rating(review)}
     return jsonify(predicted_rating)
 
 if __name__ == "__main__":

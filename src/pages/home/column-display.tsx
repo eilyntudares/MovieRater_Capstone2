@@ -63,7 +63,7 @@ export const ColumnDisplay = (props: Props) => {
 
   const getRatingFromReview = async (review: string): Promise<number> => {
     console.log("Retrieving rating for review: " + review)
-    const response = await fetch("http://localhost:5000/review-to-score", {
+    const response = await fetch("http://localhost:5000/review-to-rating", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -72,11 +72,11 @@ export const ColumnDisplay = (props: Props) => {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to get score from review");
+      throw new Error("Failed to get rating from review");
     }
 
     const data = await response.json();
-    console.log("Received Data: " + data.score)
+    console.log("Rating: " + data.rating)
     return data.score;
   };
 
