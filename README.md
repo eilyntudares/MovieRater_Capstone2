@@ -8,6 +8,7 @@ This branch enhances the movie review application by introducing a new review pr
 Checkpoint files for the sentiment analysis model can be found [here](https://huggingface.co/spaces/spava001/Sentiment-Analysis/tree/main). Once downloaded, place the contents of the checkpoint folder inside your local project at sentiment_analysis/checkpoint/ (you need to create the checkpoint folder).
 
 The final structure should look like this:
+<br>
 Movie-Rater/<br>
 └── sentiment_analysis/<br>
     └── checkpoint/<br>
