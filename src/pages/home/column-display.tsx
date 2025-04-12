@@ -6,6 +6,8 @@ import { useMutation } from "@tanstack/react-query";
 import { rateMovie, rateTvShow } from "./mutation";
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { useQueryClient } from "@tanstack/react-query";
+
 
 interface DisplayData {
     id: number;
@@ -27,12 +29,19 @@ interface Props {
 export const ColumnDisplay = (props: Props) => {
     const { data, displayType, isRated } = props;
     const [rating, setRating] = useState<number>(0)
+    const queryClient = useQueryClient();
 
     const onSuccess = () => {
         toast.success("Rated successfully!",
             {autoClose: 1000,
             theme: "colored"}
         );
+
+        if (displayType === DisplayType.Movies) {
+            queryClient.invalidateQueries({ queryKey: ["ratedMovies"] });
+        } else {
+            queryClient.invalidateQueries({ queryKey: ["ratedTvShows"] });
+        }
     }
     const onError = () => {
         toast.error("Failed to rate!", 
@@ -42,14 +51,14 @@ export const ColumnDisplay = (props: Props) => {
     }
     const{mutate: rateMovieMutation} = useMutation(
         {mutationKey: ["rateMovie"], 
-        mutationFn: (id: number) => rateMovie(id, rating),
+        mutationFn: ({ id, value }: { id: number; value: number }) => rateMovie(id, value),
         onSuccess,
         onError,
     });
 
     const{mutate: rateTvShowMutation} = useMutation(
         {mutationKey: ["rateTvShow"], 
-        mutationFn: (id: number) => rateMovie(id, rating),
+        mutationFn: ({ id, value }: { id: number; value: number }) => rateTvShow(id, value),
         onSuccess,
         onError,
     });
@@ -81,7 +90,9 @@ export const ColumnDisplay = (props: Props) => {
                             meta={`Release Date: ${displayData.release_date} | Rating: ${displayData.vote_average}`} // Fixed template string
                             description={`${displayData.overview.slice(0, 350)}...`} // Ensured proper string slicing
                         />{""}
-                        { isRated && <Label color= "green"> Your Rating : {displayData.rating} </Label> }
+                        {isRated && displayData.rating !== undefined && (
+                            <Label color="green">Your Rating: {displayData.rating}</Label>
+                        )}
                         </Link>
                         <Form style={{marginTop: "10"}}> 
                             <Form.Group incline>
@@ -90,14 +101,14 @@ export const ColumnDisplay = (props: Props) => {
                                     min="0" 
                                     max="10" 
                                     step="0.5" 
-                                    onchange={(e: React.ChangeEvent<HTMLInputElement>)=> setRating(Number(e.target.value))} 
+                                    onChange={(e: React.ChangeEvent<HTMLInputElement>)=> setRating(Number(e.target.value))} 
                                     action={{
                                         labelPosition: "right",
                                         icon: "star",
                                         content: "Rate",
                                         color: "violet",
                                         onClick: () => {
-                                            rate(displayData.id);
+                                            rate({id: displayData.id, value: rating});
                                         }
                                     }}
                                     />
