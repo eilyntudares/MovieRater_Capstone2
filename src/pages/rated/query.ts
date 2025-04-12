@@ -3,7 +3,7 @@ export const fetchRatedMovies = async () => {
          `https://api.themoviedb.org/3/guest_session/${localStorage.getItem(
          "guestSessionId"
         )}/rated/movies?language=en-US&page=1&sort_by=created_at.asc&api_key=${
-            import.meta.env.VITE_API_KEY} `, 
+            import.meta.env.VITE_API_KEY} `,
     );
 
     return res.json();
