@@ -3,7 +3,7 @@ from flask_cors import CORS
 from sentiment_analysis.sentiment_analyzer import predict_rating
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/review-to-rating": {"origins": "http://localhost:5173"}})
 
 @app.route("/review-to-rating", methods=["POST"])
 def review_to_score():
