@@ -32,18 +32,18 @@ def predict_rating(review: str) -> float:
 
     rating = 0
     for i, probability in enumerate(softmax_probabilities):
-        # Skipping using the neutral prediction for now
-        if i == 2:
-            pass
-        else:
+        # Skipping using the neutral prediction, as this is applied on the FINAL rating
+        if i != 2:
             weight = prediction_map[str(i)]["weight"]
             rating += probability.item() * weight
-    
-    # Normalize the rating to be between 0-1 and then put it in range of 0-10
+    # Normalize the rating to range between 0-1
     normalized_rating = (rating + 1) / 2
+    # Applies the neutral prediction score to the final rating (this nudges it towards the 0.5 value)
+    normalized_rating += (-normalized_rating + 0.5) * softmax_probabilities[2].item()
+    # Put it in range of 0-10
     return round((normalized_rating * 10), 2)
 
 # Example Usage
-review = "The movie was alright. It had its good parts, but could have been better."
-rating = predict_rating(review)
-print(rating)
+# review = "That movie wasnt the best in the world. The end was atleast somewhat decent though."
+# rating = predict_rating(review)
+# print(rating)
