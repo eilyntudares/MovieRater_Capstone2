@@ -47,7 +47,14 @@ Once your virtual environment is activated, install the project dependencies usi
 pip install -r requirements.txt
 ```
 
-### 3. Running the Application
+### 3. Install the concurrently npm package
+This dependency is required to allow running the React app and Flask server concurrently.
+
+```bash
+npm install concurrently --save-dev
+```
+
+### 4. Running the Application
 This version includes both a React front-end and a Flask backend server. To launch the complete application, use the following command:
 
 ```bash
