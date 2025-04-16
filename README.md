@@ -10,6 +10,16 @@ A modern web application built with React and TypeScript that allows users to di
 - User authentication and personalized profiles
 - Responsive design for optimal viewing on all devices
 
+**Navigation**: Uses React Router for page navigation
+**Authentication8**: Has a dedicated auth page for user login/signup
+**Movie Management**:
+- Browse movies on the home page
+- View individual movie details
+- Rate moviesw
+- View rated movies in a separate section
+- TV Shows: Separate section for TV show ratings
+
+
 ## Tech Stack
 
 - **Frontend**: React 18, TypeScript
@@ -28,11 +38,26 @@ A modern web application built with React and TypeScript that allows users to di
 
 ## Project Structure
 
-The application follows a modern React project structure with:
-- Components organized by feature
-- TypeScript for type safety
-- Semantic UI for consistent styling
-- React Query for efficient data fetching and caching
+The project is organized into several main directories:
+- src/: Contains all the source code
+- src/components/: Reusable UI components
+- src/pages/: Different pages/screens of the application
+- public/: Static assets like images
+
+
+App.tsx: The main application component that:
+- Sets up routing using React Router
+- Defines all the main pages/routes:
+  - Home page (/)
+  - Authentication page (/auth)
+  - Rated movies page (/rated)
+  - Individual movie page (/movie/:id)
+  - TV show page (/tvshow/:id)
+- main.tsx: The entry point that renders the React application
+
+
+
+
 
 ## Contributing
 
