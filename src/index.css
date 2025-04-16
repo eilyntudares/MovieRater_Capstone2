@@ -11,3 +11,145 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    min-height: 100vh;
+}
+
+/* Container styling */
+.container {
+    padding-top: 90px;
+    min-height: 100vh;
+    background-color: #000000;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Tab styling */
+.ui.tab {
+    background: transparent !important;
+}
+
+.ui.tab.segment {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.ui.tabular.menu {
+    border-bottom: none !important;
+    margin-bottom: 2rem;
+    justify-content: center;
+    background: transparent !important;
+}
+
+.ui.tabular.menu .item {
+    background: transparent !important;
+    color: #fff !important;
+    border: none !important;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+}
+
+.ui.tabular.menu .active.item {
+    background: rgba(156, 39, 176, 0.2) !important;
+    border-radius: 8px !important;
+}
+
+.ui.tabular.menu .item:hover {
+    background: rgba(156, 39, 176, 0.1) !important;
+    border-radius: 8px;
+}
+
+/* Movie grid styling */
+.grid {
+    gap: 2rem !important;
+}
+
+/* Loading state */
+.loading {
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Search results */
+.search-title {
+    color: #9c27b0;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.no-results {
+    color: #666;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Navbar styling */
+.nav-link:hover {
+    background: rgba(255,255,255,0.1) !important;
+}
+
+.nav-button:hover {
+    background: #fff !important;
+    color: #6a1b9a !important;
+}
+
+.search-input input {
+    background: transparent !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+.search-input input::placeholder {
+    color: rgba(255,255,255,0.7) !important;
+}
+
+.search-input i.icon {
+    color: #fff !important;
+}
+
+/* Dropdown styling */
+.ui.dropdown {
+    color: #fff !important;
+}
+
+.ui.dropdown .menu {
+    background: #ffffff !important;
+    border: none !important;
+    margin-top: 0.5rem !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.ui.dropdown .menu > .item {
+    color: #fff !important;
+    padding: 0.8rem 1.2rem !important;
+}
+
+.ui.dropdown .menu > .item:hover {
+    background: rgba(255,255,255,0.1) !important;
+}
+
+.ui.selection.dropdown {
+    border: none !important;
+    background: transparent !important;
+}
+
+.ui.selection.dropdown:hover,
+.ui.selection.dropdown:focus {
+    border: none !important;
+    background: rgba(255,255,255,0.1) !important;
+}
