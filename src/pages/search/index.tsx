@@ -34,18 +34,18 @@ export const Search = () => {
 
     return (
         <div className="container">
-            <h2 className="search-title">
+            <h2 style={{color:"#d6d5c9"}} className="search-title">
                 Search Results for "{query}" in {type === "movie" ? "Movies" : "TV Shows"}
             </h2>
             {isLoadingMovies || isLoadingTvShows ? (
-                <div className="loading">Loading...</div>
+                <div style={{color:"#d6d5c9"}} className="loading">Loading...</div>
             ) : data && data.length > 0 ? (
                 <ColumnDisplay
                     data={data}
                     displayType={type === "movie" ? DisplayType.Movies : DisplayType.TvShows}
                 />
             ) : (
-                <div className="no-results">No results found for "{query}"</div>
+                <div style={{color:"#d6d5c9"}} className="no-results">No results found for "{query}"</div>
             )}
         </div>
     );

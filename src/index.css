@@ -6,8 +6,8 @@
     --color-border: rgba(255, 255, 255, 0.1);  /* soft border lines */
     --color-text-primary: #d6d5c9;      /* main text color */
     --color-text-secondary: #a59e94;    /* muted/meta text */
-    --color-action: '#5e2a6b';            /* primary purple button/link */
-    --color-action-hover: '#4b1036';      /* hover glow purple */
+    --color-action: #5e2a6b;            /* primary purple button/link */
+    --color-action-hover: #4b1036;      /* hover glow purple */
     --color-muted-bg: #2a1b2e;          /* hover backgrounds or soft accents */
     --color-muted-border: #3d3b38;      /* subtle dividers */
     --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -56,7 +56,7 @@
   
   .ui.tabular.menu .item {
       background: transparent !important;
-      color: #fff !important;
+      color: #d6d5c9 !important;
       border: none !important;
       font-size: 1.2rem;
       padding: 1rem 2rem;
@@ -66,13 +66,13 @@
   
   .ui.tabular.menu .active.item {
     background: #4b1036 !important;
-    color: #fff !important;
+    color: "#d6d5c9" !important;
     border-radius: 8px !important;
   }
   
   .ui.tabular.menu .item:hover {
     background: #6e2c6f !important;
-    color: #fff !important;
+    color: "#d6d5c9" !important;
     border-radius: 8px;
   }
   
@@ -83,7 +83,7 @@
   
   /* Loading state */
   .loading {
-      color: #fff;
+      color: "#d6d5c9";
       font-size: 1.2rem;
       text-align: center;
       padding: 2rem;
@@ -126,16 +126,16 @@
   }
   
   .search-input i.icon {
-      color: #fff !important;
+      color: "#d6d5c9" !important;
   }
   
   /* Dropdown styling */
   .ui.dropdown {
-      color: #fff !important;
+      color: "#d6d5c9" !important;
   }
   
   .ui.dropdown .menu {
-      background: #ffffff !important;
+      background: "#d6d5c9" !important;
       border: none !important;
       margin-top: 0.5rem !important;
       border-radius: 8px !important;
