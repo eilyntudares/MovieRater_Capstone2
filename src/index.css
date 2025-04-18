@@ -65,13 +65,13 @@
   }
   
   .ui.tabular.menu .active.item {
-    background: #4b1036 !important;
+    background: #762b80 !important;
     color: "#d6d5c9" !important;
     border-radius: 8px !important;
   }
   
   .ui.tabular.menu .item:hover {
-    background: #6e2c6f !important;
+    background: #762b80 !important;
     color: "#d6d5c9" !important;
     border-radius: 8px;
   }
@@ -126,16 +126,16 @@
   }
   
   .search-input i.icon {
-      color: "#d6d5c9" !important;
+      color: #d6d5c9 !important;
   }
   
   /* Dropdown styling */
   .ui.dropdown {
-      color: "#d6d5c9" !important;
+      color: #d6d5c9 !important;
   }
   
   .ui.dropdown .menu {
-      background: "#d6d5c9" !important;
+      background: #d6d5c9 !important;
       border: none !important;
       margin-top: 0.5rem !important;
       border-radius: 8px !important;
@@ -148,7 +148,8 @@
   }
   
   .ui.dropdown .menu > .item:hover {
-      background: rgba(255,255,255,0.1) !important;
+    background-color: var(--color-action) !important;
+    color: var(--color-text-primary) !important;
   }
   
   .ui.selection.dropdown {

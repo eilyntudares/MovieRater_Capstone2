@@ -49,7 +49,7 @@ export const Navbar = () => {
     const buttonStyle = {
         background: 'transparent',
         color: '#d6d5c9',
-        border: '2px solid #fff',
+        border: '2px solid #d6d5c9',
         borderRadius: '20px',
         padding: '8px 24px',
         fontWeight: 'bold',
@@ -107,7 +107,7 @@ export const Navbar = () => {
                             style={{ 
                                 minWidth: '120px',
                                 background: 'transparent',
-                                color: '#fff',
+                                color: '#d6d5c9',
                                 border: 'none'
                             }}
                         />
@@ -127,7 +127,7 @@ export const Navbar = () => {
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             className="search-input"
-                            style={{ width: '300px' }}
+                            style={{ width: '300px', color: '#d6d5c9' }}
                         />
                     </form>
                 </Menu.Item>
