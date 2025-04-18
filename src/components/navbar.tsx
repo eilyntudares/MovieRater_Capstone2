@@ -39,8 +39,8 @@ export const Navbar = () => {
 
     const menuItemStyle = {
         fontSize: "1.3rem", 
-        color: '#fff',
-        fontWeight: 'bold',
+        color: '#d6d5c9',
+        fontWeight: '600',
         padding: '0.8rem 1.2rem',
         transition: 'all 0.3s ease',
         background: 'transparent'
@@ -48,7 +48,7 @@ export const Navbar = () => {
 
     const buttonStyle = {
         background: 'transparent',
-        color: '#fff',
+        color: '#d6d5c9',
         border: '2px solid #fff',
         borderRadius: '20px',
         padding: '8px 24px',
@@ -59,11 +59,11 @@ export const Navbar = () => {
 
     return (
         <Menu fixed="top" style={{
-            background: 'linear-gradient(to right, #6a1b9a, #9c27b0)',
+            background: 'linear-gradient(to right, #0a100d, #4b1036, #a22c29)',
             margin: 0,
             borderRadius: 0,
             border: 'none',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.4)',
             padding: '0.5rem 2rem',
             height: '70px',
             display: 'flex',

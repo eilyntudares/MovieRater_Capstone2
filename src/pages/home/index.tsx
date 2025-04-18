@@ -63,14 +63,33 @@ export const Home = () => {
     ];
 
     return (
-        <div className="container">
-            <Tab
-                panes={panes}
-                activeIndex={activeTab === DisplayType.Movies ? 0 : 1}
-                onTabChange={(_, data) => {
-                    setActiveTab(data.activeIndex === 0 ? DisplayType.Movies : DisplayType.TvShows);
-                }}
-            />
+        <div style={{ marginTop: 50, height: "auto" }}>
+            <Button.Group>
+                <Button
+                    color={displayType === DisplayType.Movies ? "blue" : undefined}
+                    onClick={() => setDisplayType(DisplayType.Movies)}
+                >
+                    Movies
+                </Button>
+                <Button
+                    color={displayType === DisplayType.TvShows ? "blue" : undefined}
+                    onClick={() => setDisplayType(DisplayType.TvShows)}
+                >
+                    TvShows
+                </Button>
+            </Button.Group>
+
+            {isLoadingMovies || isLoadingTvShows ? (
+                <div>Loading...</div>
+            ) : (
+                <div style={{ marginTop: 20 }}>
+                    {displayType === DisplayType.Movies ? (
+                        <ColumnDisplay data={movieData.results} displayType={DisplayType.Movies} />
+                    ) : (
+                        <ColumnDisplay data={tvShowData.results} displayType={DisplayType.TvShows} />
+                    )}
+                </div>
+            )}
         </div>
     );
 };

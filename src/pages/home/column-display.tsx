@@ -79,7 +79,9 @@ export const ColumnDisplay = (props: Props) => {
                     <Card.Group>
                         <Link to={`/${displayType === DisplayType.Movies ? "movie" : "tvshow"}/${displayData.id}`}>
                         <Card 
-                         style={{height: 820}}
+                         style={{height: 820, boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)", // subtle shadow
+                            border: "1px solid var(--color-border-soft)",
+                            borderRadius: "10px",}}
                             fluid 
                             image={`https://image.tmdb.org/t/p/original/${displayData.poster_path}`} // Fixed template string
                             header={
@@ -88,7 +90,21 @@ export const ColumnDisplay = (props: Props) => {
                                     : displayData.name
                             } 
                             meta={`Release Date: ${displayData.release_date} | Rating: ${displayData.vote_average}`} // Fixed template string
-                            description={`${displayData.overview.slice(0, 350)}...`} // Ensured proper string slicing
+                            description={
+                                <div
+                                  style={{
+                                    color: "black", // matches your soft white
+                                    fontFamily: "var(--font-main)",
+                                    fontSize: "0.92rem",
+                                    lineHeight: "1.5",
+                                    padding: "0.5rem 0",
+                                    backgroundColor: "transparent", // remove the black box
+                                  }}
+                                >
+                                  {`${displayData.overview.slice(0, 350)}...`} 
+                                </div>
+                              } // Ensured proper string slicing
+                               
                         />{""}
                         {isRated && displayData.rating !== undefined && (
                             <Label color="green">Your Rating: {displayData.rating}</Label>
@@ -106,11 +122,24 @@ export const ColumnDisplay = (props: Props) => {
                                         labelPosition: "right",
                                         icon: "star",
                                         content: "Rate",
-                                        color: "violet",
                                         onClick: () => {
-                                            rate({id: displayData.id, value: rating});
+                                          rate({ id: displayData.id, value: rating });
+                                        },
+                                        style: {
+                                          backgroundColor: "#6e2c6f",
+                                          color: "#fff",
+                                          border: "none",
+                                          borderRadius: "5px",
+                                          fontWeight: "bold",
+                                          transition: "all 0.3s ease",
+                                        },
+                                        onMouseEnter: (e: any) => {
+                                          e.target.style.backgroundColor = "#884a8e";
+                                        },
+                                        onMouseLeave: (e: any) => {
+                                          e.target.style.backgroundColor = "#6e2c6f";
                                         }
-                                    }}
+                                      }}                                      
                                     />
                                 </Form.Field>
                             </Form.Group>

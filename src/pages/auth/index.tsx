@@ -2,6 +2,7 @@ import { Grid, Header, Form, Segment, Button } from "semantic-ui-react";
 import { useMutation} from "@tanstack/react-query";
 import { mutationLogin } from "./mutation";
 import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
 
 export const Auth = () => {
   const { data, mutate } = useMutation({
@@ -10,6 +11,7 @@ export const Auth = () => {
   });
 
   const navigate = useNavigate();
+  const[isHovered, setIsHovered] = useState(false);
 
   const handleLogin = async () => {
     await mutate();
@@ -17,22 +19,23 @@ export const Auth = () => {
     navigate("/");
   }; 
 
+
   return (
-    <Grid textAlign="center" verticalAlign="middle" style={{ height: "100vh" }}>
+    <Grid textAlign="center" verticalAlign="middle" style={{ height: "100vh"}}>
         <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as="h2" color= "violet" textAlign="center">
+            <Header as="h2" style={{color:"#d6d5c9"}} textAlign="center">
                 Welcome! Login by registering as a Guest below
             </Header>
             <Form size="large">
-              <Segment stacked>
-                <Button color = "violet" size= "large" fluid onClick={handleLogin}> 
+                <Button 
+                  fluid onClick={handleLogin} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}
+                  style= {{backgroundColor: isHovered ? '#5e2a6b' : '#4b1036', color: "#f5f5f5"}} size= "large"> 
                   {" "}
                   Login </Button>
-              </Segment>
-
             </Form>
         </Grid.Column>
     </Grid>
+ 
   );
 };
 
