@@ -10,7 +10,7 @@ A modern web application built with React and TypeScript that allows users to di
 - User authentication and personalized profiles
 - Responsive design for optimal viewing on all devices
 
-**Navigation**: Uses React Router for page navigation
+## Navigation: Uses React Router for page navigation
 **Authentication8**: Has a dedicated auth page for user login/signup
 **Movie Management**:
 - Browse movies on the home page
